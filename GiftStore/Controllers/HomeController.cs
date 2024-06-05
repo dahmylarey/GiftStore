@@ -1,3 +1,4 @@
+using GiftStore.Interface;
 using GiftStore.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -6,11 +7,13 @@ namespace GiftStore.Controllers
 {
 	public class HomeController : Controller
 	{
-		private readonly ILogger<HomeController> _logger;
+		
 
-		public HomeController(ILogger<HomeController> logger)
+		private readonly IGiftIRepository GiftRepo;
+
+		public HomeController(IGiftIRepository giftRepo)
 		{
-			_logger = logger;
+			GiftRepo = giftRepo;
 		}
 
 		public IActionResult Index()

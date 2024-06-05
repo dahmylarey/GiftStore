@@ -16,6 +16,6 @@ namespace Gift_Store_And_Inventory.Data
 		public string ProfileUrl { get; set; }
 
 	
-		public ICollection<User>?Users { get; set; }
+		public ICollection<User>? Users { get; set; }
 	}
 }

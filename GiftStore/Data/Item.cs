@@ -26,8 +26,8 @@ namespace Gift_Store_And_Inventory.Data
         [Required]
         public User CreatedBy { get; set; }
 
-        public ICollection <Item> ?Items { get; set; }
-        public virtual User? Users { get; set; }
+        public List <Item> ?Items { get; set; }
+       // public virtual User? Users { get; set; }
 
     }
 }
