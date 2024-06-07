@@ -15,6 +15,6 @@ namespace Gift_Store_And_Inventory.Data
 		[Required]
 		public string UserId { get; set; }
 
-		public List<Cart> Carts { get; set; }
+		public ICollection<Cart> Carts { get; set; }
 	}
 }

@@ -7,7 +7,7 @@ using System.Security.Policy;
 namespace Gift_Store_And_Inventory.Data
 {
 
-	public class User : IdentityUser
+	public class User /*: IdentityUser*/
 	{
 		[Key]
         public  string Id { get; set; }
@@ -15,7 +15,8 @@ namespace Gift_Store_And_Inventory.Data
         public string DisplayName { get; set; }
 		public string ProfileUrl { get; set; }
 
-	
-		public ICollection<User>? Users { get; set; }
+
+		[NotMapped]
+		public ICollection <User>? Users { get; set; }
 	}
 }

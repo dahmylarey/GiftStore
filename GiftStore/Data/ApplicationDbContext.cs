@@ -1,6 +1,7 @@
 ﻿using Gift_Store_And_Inventory.Data;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System.Configuration;
 
 namespace GiftStore.Data
 {
@@ -10,6 +11,8 @@ namespace GiftStore.Data
 			: base(options)
 		{
 		}
+
+		public DbSet<Item> Users { get; set; }
 
 		public DbSet<Item> Items { get; set; }
 		public DbSet<Cart> Carts { get; set; } 
@@ -21,7 +24,15 @@ namespace GiftStore.Data
 		public DbSet<Restock> Restocks { get; set; }
 		public DbSet<Store> Stores { get; set; }
 		public DbSet<StoreItem> StoreItems { get; set; }
-		
+
+
+
+		protected override void OnModelCreating(ModelBuilder builder)
+		{
+			base.OnModelCreating(builder);
+		//builder.Entity<User>().HasNoKey();
+			
+		}
 	}
 
 

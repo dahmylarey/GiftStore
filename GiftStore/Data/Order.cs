@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Gift_Store_And_Inventory.Data
@@ -11,6 +12,7 @@ namespace Gift_Store_And_Inventory.Data
 		[Required]
 		public string UserId { get; set; }
 
+		
 		[Required]
 		public Array OrderItems { get; set; }
         [Required]
