@@ -175,9 +175,11 @@ namespace GiftStore.Implemetation
 				await _context.SaveChangesAsync();
 			}
 		}
-			
-		
-		
+
+		Task IGiftIRepository.Delete(Location location)
+		{
+			throw new NotImplementedException();
+		}
 	}
 }
 

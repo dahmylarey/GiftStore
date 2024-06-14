@@ -30,9 +30,6 @@ namespace GiftStore.Interface
 		Task Update(Order Model);
 		Task Trash(Order Model);
 		Task TrashByid(string id);
-		
-
-		
-		
+		Task Delete(Location location);
 	}
 }
