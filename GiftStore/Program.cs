@@ -1,4 +1,6 @@
 using GiftStore.Data;
+using GiftStore.Implemetation;
+using GiftStore.Interface;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,6 +15,11 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
 	.AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
+
+//Add Scoped services for interfaces
+builder.Services.AddScoped<IGiftIRepository, GiftRepository>();
+builder.Services.AddScoped<IOrderItemsRepository, OrderItemsRepository>();
+builder.Services.AddScoped<IStoreIRepository, StoreRepository>();
 
 var app = builder.Build();
 
