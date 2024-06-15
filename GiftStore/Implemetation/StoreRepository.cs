@@ -111,11 +111,14 @@ namespace GiftStore.Implemetation
 
 
 		//Cart Tasks
-		public async Task<ICollection<Cart>> GetAllOrders()
+		public async Task<ICollection<Cart>> GetAllCarts()
 		{
 			var data = await _context.Carts.ToListAsync();
 			return data;
 		}
+
+		
+
 		public async Task Add(Cart Model)
 		{
 			await _context.AddAsync(Model);
@@ -149,6 +152,10 @@ namespace GiftStore.Implemetation
 			var data = await _context.Carts.FindAsync(id);
 			_context.SaveChangesAsync();
 		}
+
+		
+
+
 
 		
 	}

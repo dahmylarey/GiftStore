@@ -29,6 +29,14 @@ namespace GiftStore.Controllers
 			return View(data);
 		}
 
+		//load single Order
+		[HttpGet("{id}")]
+		public async Task<IActionResult> GetById(string id)
+		{
+			var data = await _context.Orders.FindAsync();
+			return View(data);
+		}
+
 		//Upload Order
 		[HttpPost]
 		public async Task<IActionResult> Create()
@@ -37,6 +45,13 @@ namespace GiftStore.Controllers
 			return View(data);
 		}
 
+		//Update
+		[HttpPut]
+		public async Task<IActionResult> Update(Order Model)
+		{
+			var data = await _context.Orders.FindAsync(Model.Id);
+			return View(data);
+		}
 
 		//Delete
 		[HttpPost]

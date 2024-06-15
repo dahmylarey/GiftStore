@@ -34,6 +34,8 @@ namespace GiftStore.Interface
 
 		//StoreItems Tasks
 		Task<ICollection<StoreItem>> AllStoreItems();
+
+		
 		Task Add(StoreItem Model);
 		Task Update(StoreItem Model);
 		Task Trash(StoreItem Model);

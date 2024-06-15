@@ -26,6 +26,8 @@ namespace GiftStore.Interface
 
 		//Orders Tasks
 		Task<IEnumerable<Order>> GetAllOrders();
+		
+
 		Task Add(Order Model);
 		Task Update(Order Model);
 		Task Trash(Order Model);

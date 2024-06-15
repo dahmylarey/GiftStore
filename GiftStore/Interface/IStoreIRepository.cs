@@ -22,7 +22,8 @@ namespace GiftStore.Interface
 
 
 		//Cart Tasks
-		Task<ICollection<Cart>> GetAllOrders();
+		Task<ICollection<Cart>> GetAllCarts();
+		
 		Task Add(Cart Model);
 		Task Update(Cart Model);
 		Task Trash(Cart Model);

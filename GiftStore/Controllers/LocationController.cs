@@ -27,6 +27,14 @@ namespace GiftStore.Controllers
 			return View(data);
 		}
 
+		//load single Location
+		public async Task<IActionResult> GetByName(string Name)
+		{
+			var data = await _context.Locations.FindAsync(Name);
+			return View(data);
+		}
+
+
 		//Upload Location
 		[HttpPost]
 		public async Task<IActionResult> Create()
@@ -35,6 +43,13 @@ namespace GiftStore.Controllers
 			return View(data);
 		}
 
+		//Update Location
+		[HttpPut]
+		public async Task<IActionResult> Update(Location Model)
+		{
+			var data = await _context.Locations.FindAsync(Model.Id);
+			return View(data);
+		}
 
 		//Delete
 		[HttpPost]

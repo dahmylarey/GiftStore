@@ -21,10 +21,26 @@ namespace GiftStore.Controllers
 			return View(data);
 		}
 
+		
+
+		[HttpGet("{id}")]
+		public async Task<IActionResult> GetById(string id)
+		{
+			var data = await _context.Items.FindAsync();
+			return View(data);
+		}
+
 		[HttpPost]
 		public async Task<IActionResult> Create()
 		{
 			var data = await this.giftRepo.GetAllItems();
+			return View(data);
+		}
+
+		[HttpPut]
+		public async Task<IActionResult> Update(Item Model)
+		{
+			var data = await _context.Items.FindAsync(Model.Id);
 			return View(data);
 		}
 
